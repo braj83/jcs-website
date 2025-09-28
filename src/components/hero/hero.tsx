@@ -44,7 +44,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
         >
-          JCS constructs technology teams, offers managed services, and provides solutions tailored for both startup and enterprise clients.
+          JCS constructs technology teams, offers managed services, and provides solutions tailored for both startups and enterprise clients.
         </motion.p>
       </motion.div>
 
@@ -82,8 +82,8 @@ const Hero = () => {
             priority
             loading="eager"
           />
-          
-          {/* Optional: Add subtle glow effect on hover */}
+
+          {/* Glowing Background Effect */}
           <motion.div
             className="absolute inset-0 bg-primary/10 rounded-full blur-md -z-10"
             initial={{ opacity: 0, scale: 0.8 }}

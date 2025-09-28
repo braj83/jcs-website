@@ -1,87 +1,267 @@
+"use client";
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { motion } from "motion/react";
 
+// Individual service features data with SVG paths
 const features = [
   {
-    icon: "/service1.svg",
     title: "Software Development",
     description:
       "At JCS Software, we specialize in crafting custom software that aligns with your unique business needs and objectives. Our team of experienced software developers possesses the expertise to transform your ideas into tangible solutions that drive growth and efficiency.",
+    svgPaths: [
+      "M12 2L2 7l10 5 10-5-10-5z",
+      "M2 17l10 5 10-5M2 12l10 5 10-5"
+    ],
+    strokeWidth: 2,
   },
   {
-    icon: "/service2.svg",
-    title: "Cloud and Infrastructure",
+    title: "Cloud and Infrastructure", 
     description:
-      "Build, optimize and secure your cloud environment and reduce your business costs. If you have yet to make the next move and put yourself into the cloud, let our trusted and experienced professionals help guide you through every step. If you are already there, let them consult you to help you further get the most out of the cloud.",
+      "Build, optimize and secure your cloud environment and reduce your business costs. If you have yet to make the next move and put yourself into the cloud, let our trusted and experienced professionals help guide you through every step.",
+    svgPaths: [
+      "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"
+    ],
+    strokeWidth: 2,
   },
   {
-    icon: "/service3.svg",
     title: "Managed IT Services",
     description:
-      "JCS offers you a wide range of Managed Services that will help take care of your IT. Whether it be from day-to-day maintenance to proactive problem solving, we are here to manage the headaches for you. Use JSC services at the time when you need it to complement your current team and take advantage of new opportunities as they arise. Get expert support, unlock efficiency gains and free up resources – all without having to expand your team or needlessly raise your costs.",
+      "JCS offers you a wide range of Managed Services that will help take care of your IT. Whether it be from day-to-day maintenance to proactive problem solving, we are here to manage the headaches for you.",
+    svgPaths: [
+      "M9 12l2 2 4-4",
+      "M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"
+    ],
+    strokeWidth: 2,
   },
   {
-    icon: "/service4.svg",
     title: "ServiceNow",
     description:
-      "Looking for a trusted ServiceNow provider? We are here to help you implement your ServiceNow solutions, from smooth rollouts to ongoing support. Work with us to help transform your business potential. We will make sure your procedures and software are properly incorporated into ServiceNow so you can make the right transition and avoid any future bumps in the road.",
+      "Looking for a trusted ServiceNow provider? We are here to help you implement your ServiceNow solutions, from smooth rollouts to ongoing support. Work with us to help transform your business potential.",
+    svgPaths: [
+      "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
+      "M14 2v6h6",
+      "M16 13H8",
+      "M16 17v-4",
+      "M12 17v-4"
+    ],
+    strokeWidth: 2,
   },
   {
-    icon: "/service5.svg",
     title: "Data and AI",
     description:
-      "AI may be disrupting the market but do not let it disrupt your vision or business. Let our team of AI experts work with you to show you how AI can help your business achieve its goals and targets. We can consult to help you create your very own conversational AI to offer your own customers text or conversational based assistance. Unleash your potential through building a foundation for smarter, faster success using AI.",
+      "AI may be disrupting the market but do not let it disrupt your vision or business. Let our team of AI experts work with you to show you how AI can help your business achieve its goals and targets.",
+    svgPaths: [
+      "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+    ],
+    strokeWidth: 2,
   },
   {
-    icon: "/service6.svg",
     title: "Product Management",
     description:
-      "You may have a vision to create a unique IT product but are unsure of how to make it a reality. Our team can help guide you along that path to help you successfully manage every step of the way to implement the right product for your market. We will take your vision and translate it into a product by helping you through market research, looking at the product’s market fit, assisting you with product design and we can even make a road map for your products to be executed flawlessly.",
+      "You may have a vision to create a unique IT product but are unsure of how to make it a reality. Our team can help guide you along that path to help you successfully manage every step of the way.",
+    svgPaths: [
+      "M3 3v5h5",
+      "M3 8l7-7 13 13v3h-3L7 3z",
+      "M14.5 10.5L19 15"
+    ],
+    strokeWidth: 2,
   },
 ];
 
 const Services = () => {
   return (
-    <div className="max-w-7xl w-full mx-auto min-h-screen flex items-center justify-center px-6 py-12">
-      <div>
-        <Badge
+    <section className="max-w-7xl w-full mx-auto min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 lg:py-20">
+      <div className="w-full">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-12 lg:mb-16"
+        >
+          <Badge
             variant="secondary"
-            className="rounded-full py-1 border-border"
+            className="rounded-full py-2 px-4 border-border hover:bg-accent/80 transition-colors"
             asChild
           >
-            <Link href="#">
-              What We Offer <ArrowUpRight className="ml-1 size-4" />
+            <Link href="#" className="inline-flex items-center gap-2">
+              What We Offer <ArrowUpRight className="w-4 h-4" />
             </Link>
           </Badge>
-        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-left mt-2">
-          Services
-        </h2>
-        <div className="mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-(--breakpoint-xl) mx-auto">
-          {features.map((feature) => (
-            <div
+          
+          <motion.h2 
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-left mt-4"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
+          >
+            Services
+          </motion.h2>
+        </motion.div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {features.map((feature, index) => (
+            <motion.div
               key={feature.title}
-              className="flex flex-col border rounded-xl py-6 px-5"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="group relative overflow-hidden"
             >
-              <div className="h-30 w-30 flex items-center justify-left rounded-full">
-                <Image
-                  src={feature.icon}
-                  alt={`${feature.title} icon`}
-                  width={64}
-                  height={64}
-                />
+              {/* Card Background with Better Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl" />
+              
+              {/* Main Card */}
+              <div className="relative flex flex-col border border-border/50 hover:border-primary/20 rounded-xl p-6 lg:p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/5">
+                
+                {/* Animated SVG Icon */}
+                <motion.div 
+                  className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-6"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5,
+                    transition: { type: "spring", stiffness: 300, damping: 10 }
+                  }}
+                >
+                  <motion.svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="w-10 h-10 lg:w-12 lg:h-12"
+                    whileHover={{ rotate: -2 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {feature.svgPaths.map((path, pathIndex) => (
+                      <motion.path
+                        key={pathIndex}
+                        d={path}
+                        stroke="currentColor"
+                        strokeWidth={feature.strokeWidth}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-primary"
+                        initial={{ 
+                          pathLength: 0,
+                          opacity: 0,
+                          strokeDasharray: "0 1"
+                        }}
+                        whileInView={{
+                          pathLength: 1,
+                          opacity: 1,
+                          strokeDasharray: "1 0"
+                        }}
+                        whileHover={{
+                          stroke: ["currentColor", "hsl(var(--primary))", "currentColor"],
+                          transition: {
+                            duration: 0.8,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }
+                        }}
+                        transition={{
+                          pathLength: { 
+                            duration: 1.5, 
+                            delay: pathIndex * 0.2,
+                            ease: "easeInOut"
+                          },
+                          opacity: { 
+                            duration: 0.3, 
+                            delay: pathIndex * 0.2 
+                          },
+                          strokeDasharray: { 
+                            duration: 1.5, 
+                            delay: pathIndex * 0.2,
+                            ease: "easeInOut"
+                          }
+                        }}
+                        viewport={{ once: true, margin: "-50px" }}
+                      />
+                    ))}
+                    
+                    {/* Optional: Add animated fill for certain icons */}
+                    {feature.svgPaths.map((path, pathIndex) => (
+                      <motion.path
+                        key={`fill-${pathIndex}`}
+                        d={path}
+                        fill="none"
+                        className="text-primary/10"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ 
+                          opacity: 0.1,
+                          transition: { duration: 0.3 }
+                        }}
+                      />
+                    ))}
+                  </motion.svg>
+                </motion.div>
+
+                {/* Content */}
+                <div className="flex-1 space-y-4">
+                  <motion.h3 
+                    className="text-xl lg:text-2xl font-semibold text-foreground"
+                    whileHover={{ x: 2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {feature.title}
+                  </motion.h3>
+                  
+                  <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+
+                {/* Subtle Decorative Elements */}
+                <div className="absolute -top-1 -right-1 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -bottom-1 -left-1 w-16 h-16 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
-              <span className="text-lg font-semibold">{feature.title}</span>
-              <p className="mt-6 text-foreground/80 text-[15px]">
-                {feature.description}
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Optional: Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-16 lg:mt-20"
+        >
+          <p className="text-muted-foreground mb-6 text-lg">
+            Ready to transform your business with our expertise?
+          </p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link 
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Get Started Today
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
