@@ -1,0 +1,19 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_218_475)" fill="none">
+                    <path d="M25.3333 74.6667C25.3333 84.2395 33.0937 92 42.6666 92H85.3333C94.9061 92 102.667 84.2395 102.667 74.6667C102.667 65.5301 95.5978 58.0448 86.6309 57.3813C85.9642 45.4608 76.0869 36 64 36C51.9129 36 42.0356 45.4608 41.3692 57.3813C32.4022 58.0448 25.3333 65.5301 25.3333 74.6667Z" stroke="#FFFFFF" stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M56.125 64.125C56.125 62.4681 57.4681 61.125 59.125 61.125H68.875C70.5319 61.125 71.875 62.4681 71.875 64.125V73.875C71.875 75.5319 70.5319 76.875 68.875 76.875H59.125C57.4681 76.875 56.125 75.5319 56.125 73.875V64.125Z" fill="#D3FF50" stroke="#D3FF50" stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M60.625 58.125V60.375" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M74.875 65.625H72.625" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M60.625 77.625V79.875" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M55.375 65.625H53.125" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M67.375 58.125V60.375" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M74.875 72.375H72.625" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M67.375 77.625V79.875" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    <path d="M55.375 72.375H53.125" stroke="#D3FF50" stroke-width="2.25px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_218_475">
+                        <rect width="128" height="128" fill="white"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
