@@ -235,31 +235,6 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Optional: Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 lg:mt-20"
-        >
-          <p className="text-muted-foreground mb-6 text-lg">
-            Ready to transform your business with our expertise?
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link 
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Get Started Today
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
