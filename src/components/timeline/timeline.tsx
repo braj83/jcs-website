@@ -28,49 +28,69 @@ const steps = [
 export default function Timeline() {
   return (
     <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6">
-      <div className="relative ml-4 sm:ml-6">
-        {/* Timeline line */}
-        <div className="absolute left-0 inset-y-0 border-l-2 border-border" />
-
+      <div className="space-y-8 md:space-y-10">
         {steps.map(({ title, description }, index) => (
           <motion.div 
             key={index} 
-            className="relative pl-8 sm:pl-10 pb-10 last:pb-0"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="flex gap-4 md:gap-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ 
-              duration: 0.6, 
-              delay: index * 0.15,
+              duration: 0.5,
+              delay: index * 0.1,
               ease: [0.25, 0.1, 0.25, 1] 
             }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Timeline Icon */}
+            {/* Left side: Timeline icon and line */}
+            <div className="flex flex-col items-center flex-shrink-0">
+              <motion.div 
+                className="h-10 w-10 border-2 border-border flex items-center justify-center rounded-full bg-accent"
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 12
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <motion.span 
+                  className="font-semibold text-lg text-foreground dark:text-background"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: index * 0.1 + 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  {index + 1}
+                </motion.span>
+              </motion.div>
+              {index < steps.length - 1 && (
+                <div className="w-0.5 bg-border flex-1 mt-2" />
+              )}
+            </div>
+
+            {/* Right side: Content */}
             <motion.div 
-              className="absolute left-px -translate-x-1/2 h-9 w-9 border-2 border-muted-foreground/40 flex items-center justify-center rounded-full bg-accent ring-4 sm:ring-8 ring-background"
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
+              className="flex-1 pb-2"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ 
                 duration: 0.5,
-                delay: index * 0.15,
-                type: "spring",
-                stiffness: 200,
-                damping: 15
+                delay: index * 0.1 + 0.2,
+                ease: [0.25, 0.1, 0.25, 1]
               }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <span className="font-semibold text-lg text-foreground dark:text-background">{index + 1}</span>
-            </motion.div>
-
-            {/* Content */}
-            <div className="pt-1 space-y-2">
-              <h3 className="text-xl lg:text-2xl font-medium tracking-tight">
+              <h3 className="text-xl lg:text-2xl font-semibold tracking-tight">
                 {title}
               </h3>
-              <p className="text-foreground/80 text-sm sm:text-base leading-relaxed">
+              <p className="mt-2 text-foreground/80 text-sm sm:text-base leading-relaxed">
                 {description}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

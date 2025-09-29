@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -51,7 +49,7 @@
   --foreground: oklch(0.13 0.04 264.7); /* deep dark gray */
 
   /* Surfaces */
-  --card: #f9f9f9; /* cards stand out as white panels */
+  --card: #f0f0f0; /* cards stand out as white panels */
   --card-foreground: var(--foreground);
   --popover: var(--card);
   --popover-foreground: var(--foreground);

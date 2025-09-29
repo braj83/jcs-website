@@ -1,9 +1,6 @@
 "use client";
 
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 // Individual service features data with SVG paths
@@ -22,52 +19,35 @@ const features = [
     title: "Cloud and Infrastructure", 
     description:
       "Build, optimize and secure your cloud environment and reduce your business costs. If you have yet to make the next move and put yourself into the cloud, let our trusted and experienced professionals help guide you through every step.",
-    svgPaths: [
-      "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"
-    ],
+    svgPaths: ["M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"],
     strokeWidth: 2,
   },
   {
     title: "Managed IT Services",
     description:
       "JCS offers you a wide range of Managed Services that will help take care of your IT. Whether it be from day-to-day maintenance to proactive problem solving, we are here to manage the headaches for you.",
-    svgPaths: [
-      "M9 12l2 2 4-4",
-      "M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"
-    ],
+    svgPaths: ["M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z", "M9 12l2 2 4-4"],
     strokeWidth: 2,
   },
   {
     title: "ServiceNow",
     description:
       "Looking for a trusted ServiceNow provider? We are here to help you implement your ServiceNow solutions, from smooth rollouts to ongoing support. Work with us to help transform your business potential.",
-    svgPaths: [
-      "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      "M14 2v6h6",
-      "M16 13H8",
-      "M16 17v-4",
-      "M12 17v-4"
-    ],
+    svgPaths: ["M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z", "M14 2v6h6", "M8 13h8", "M8 17h4"],
     strokeWidth: 2,
   },
   {
     title: "Data and AI",
     description:
       "AI may be disrupting the market but do not let it disrupt your vision or business. Let our team of AI experts work with you to show you how AI can help your business achieve its goals and targets.",
-    svgPaths: [
-      "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-    ],
+    svgPaths: ["M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"],
     strokeWidth: 2,
   },
   {
     title: "Product Management",
     description:
       "You may have a vision to create a unique IT product but are unsure of how to make it a reality. Our team can help guide you along that path to help you successfully manage every step of the way.",
-    svgPaths: [
-      "M3 3v5h5",
-      "M3 8l7-7 13 13v3h-3L7 3z",
-      "M14.5 10.5L19 15"
-    ],
+    svgPaths: ["M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"],
     strokeWidth: 2,
   },
 ];
@@ -84,18 +64,22 @@ const Services = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-12 lg:mb-16"
         >
-          <Badge
-            variant="secondary"
-            className="rounded-full py-2 px-4 border-border hover:bg-accent/80 transition-colors"
-            asChild
+          <motion.h3 
+            className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-left mt-4 flex items-center"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
           >
-            <Link href="#" className="inline-flex items-center gap-2">
-              What We Offer <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </Badge>
-          
+            What We Offer
+            <motion.span
+              className="inline-block ml-2 bg-primary w-1 h-7 sm:h-8 lg:h-9"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.h3>
           <motion.h2 
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-left mt-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-left"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}

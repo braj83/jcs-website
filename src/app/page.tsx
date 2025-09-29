@@ -7,6 +7,7 @@ import Timeline from "@/components/timeline/timeline";
 import LetsTalk from "@/components/lets-talk/lets-talk";
 import Footer from "@/components/footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
+import Expretise from "@/components/expertise/expertise";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
             <AboutUs />
             <hr className="my-12 border-border" />
             <LetsWork />
+            <hr className="my-12 border-border" />
+            <Expretise />
           </div>
         </div>
       </section>

@@ -1,23 +1,17 @@
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 
 const LetsTalk = () => {
   return (
     <div className="grid lg:grid-cols-3 gap-12 px-6">
       <div className="lg:col-span-2 py-12">
-        <Badge
-          variant="secondary"
-          className="rounded-full py-1 border-border"
-          asChild
-        >
-          <Link href="#">
-            Let&apos;s talk <ArrowUpRight className="ml-1 size-4" />
-          </Link>
-        </Badge>
-        <h1 className="mt-6 text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-semibold leading-[1.2]! tracking-tighter">
+
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-left mt-4">
+          Let&apos;s talk
+            <span className="text-primary">_</span>
+        </h3>
+
+        <h1 className="mt-2 text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-semibold leading-[1.2]! tracking-tighter">
           Dedicated IT professionals at your service.
         </h1>
         <p className="mt-6 sm:text-lg">

@@ -1,8 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -37,17 +34,12 @@ const AboutUs = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <Badge
-            variant="secondary"
-            className="rounded-full py-2 px-4 border-border hover:bg-accent/80 transition-colors"
-            asChild
-          >
-            <Link href="#" className="inline-flex items-center gap-2">
-              Who We Are <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </Badge>
-          
-          <h2 className="mt-4 lg:mt-6 text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-left mt-4">
+            Who We Are
+              <span className="text-primary">_</span>
+          </h3>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter">
             About Us
           </h2>
           
