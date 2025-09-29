@@ -156,3 +156,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+.content-wrapper {
+  min-height: 100vh;
+  contain: content;
+}

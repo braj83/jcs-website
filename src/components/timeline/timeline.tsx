@@ -83,6 +83,7 @@ export default function Timeline() {
                 ease: [0.25, 0.1, 0.25, 1]
               }}
               viewport={{ once: true, amount: 0.3 }}
+              layoutScroll
             >
               <h3 className="text-xl lg:text-2xl font-semibold tracking-tight">
                 {title}

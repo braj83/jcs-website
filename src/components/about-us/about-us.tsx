@@ -20,9 +20,10 @@ const AboutUs = () => {
           <Image
             src="/work-img-1.png"
             alt="JCS Software team collaborating on innovative technology solutions"
-            fill
+            width={971}
+            height={928}
             className="object-cover"
-            priority
+            loading="lazy"
           />
         </motion.div>
 

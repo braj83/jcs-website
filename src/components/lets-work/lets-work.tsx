@@ -41,7 +41,8 @@ const LetsWork = () => {
           <Image
             src="/work-img-2.png"
             alt="Digital transformation and business innovation collaboration"
-            fill
+            width={971}
+            height={928}
             className="object-cover"
             loading="lazy"
           />
