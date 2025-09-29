@@ -24,7 +24,12 @@ export const NavigationSheet = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="rounded-full">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full"
+          aria-label="Open navigation menu"
+        >
           <Menu />
         </Button>
       </SheetTrigger>
@@ -43,7 +48,7 @@ export const NavigationSheet = () => {
         <div className="mt-auto mb-4 w-full">
           <Button
             size="lg"
-            className="w-full rounded-md text-black"
+            className="w-full rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             asChild
             onClick={handleLinkClick}
           >

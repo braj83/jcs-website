@@ -7,45 +7,50 @@ import Timeline from "@/components/timeline/timeline";
 import LetsTalk from "@/components/lets-talk/lets-talk";
 import Footer from "@/components/footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
-import Expretise from "@/components/expertise/expertise";
+import Expertise from "@/components/expertise/expertise";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center relative">
       <Navbar />
 
-      <section id="home" className="w-full flex flex-col items-center mb-12">
+      {/* Home Section */}
+      <section id="home" className="w-full flex flex-col items-center pt-24 pb-12 lg:pb-20">
         <Hero />
         <Services />
       </section> 
 
-      <section id="about" className="w-full p-6">
-        <div className="bg-foreground text-background rounded-3xl py-12">
-          <div className="max-w-[var(--breakpoint-xl)] mx-auto">
+      {/* About Section - Dark Background */}
+      <section id="about" className="w-full px-4 sm:px-6 py-12 lg:py-20">
+        <div className="bg-foreground text-background rounded-3xl py-12 lg:py-16">
+          <div className="max-w-[80rem] mx-auto">
             <AboutUs />
-            <hr className="my-12 border-border" />
+            <hr className="my-12 lg:my-16 border-background/20" />
             <LetsWork />
-            <hr className="my-12 border-border" />
-            <Expretise />
+            <hr className="my-12 lg:my-16 border-background/20" />
+            <Expertise />
           </div>
         </div>
       </section>
 
-      <section id="process" className="w-full max-w-[var(--breakpoint-xl)] mx-auto md:grid md:grid-cols-2 md:items-center">
-        <HowWeWork />
-        <Timeline />
+      {/* Process Section */}
+      <section id="process" className="w-full max-w-[80rem] mx-auto py-12 lg:py-20 px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 md:items-start">
+          <HowWeWork />
+          <Timeline />
+        </div>
       </section>
 
-      <section id="contact" className="w-full p-6">
+      {/* Contact Section - Dark Background */}
+      <section id="contact" className="w-full px-4 sm:px-6 py-12 lg:py-20">
         <div className="bg-foreground text-background rounded-3xl">
-          <div className="max-w-[var(--breakpoint-xl)] mx-auto">
+          <div className="max-w-[80rem] mx-auto">
             <LetsTalk />
           </div>
         </div>
       </section>
 
       <Footer />
-      
     </main>
   );
 }

@@ -1,12 +1,18 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 import { ThemeToggleButton } from "../theme-toggle-button";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <nav className="fixed top-6 inset-x-4 h-16 bg-background/80 backdrop-blur-[2px] border dark:primary max-w-[var(--breakpoint-xl)] mx-auto rounded-md z-50">
+    <nav 
+      className="fixed top-6 inset-x-4 h-16 bg-background/80 backdrop-blur-md border border-border dark:border-primary/20 max-w-[80rem] mx-auto rounded-xl z-50 shadow-sm"
+      aria-label="Main navigation"
+    >
       <div className="h-full flex items-center justify-between mx-auto px-4">
         <Logo />
 
@@ -15,7 +21,12 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ThemeToggleButton />
-          <Button className="rounded-md hidden md:inline-flex text-black">Let&#39;s Talk</Button>
+          <Button 
+            className="rounded-md hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            asChild
+          >
+            <Link href="#contact">Let&apos;s Talk</Link>
+          </Button>
 
           {/* Mobile Menu */}
           <div className="md:hidden">
@@ -27,4 +38,4 @@ export const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;  
