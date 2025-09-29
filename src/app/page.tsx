@@ -8,10 +8,13 @@ import LetsTalk from "@/components/lets-talk/lets-talk";
 import Footer from "@/components/footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
 import Expertise from "@/components/expertise/expertise";
+import { BackgroundPaths as AnimatedBackground } from "@/components/ui/animated-background";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center relative">
+      <AnimatedBackground />
+      
       <Navbar />
 
       {/* Home Section */}

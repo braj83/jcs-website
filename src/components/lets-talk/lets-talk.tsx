@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 const LetsTalk = () => {
   return (
     <section className="max-w-[80rem] mx-auto px-4 sm:px-6">
-      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid lg:grid-cols-3 gap-4 lg:gap-12">
         
         {/* Content */}
         <motion.div 

@@ -58,7 +58,7 @@ export default function Timeline() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <motion.span 
-                  className="font-semibold text-lg text-foreground dark:text-background"
+                  className="font-semibold text-lg text-black"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3 }}

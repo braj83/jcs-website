@@ -42,7 +42,7 @@ const Expertise = () => {
             Expert-driven services
           </h2>
           
-          <div className="mt-8 lg:mt-10 flex flex-wrap gap-3 lg:gap-4">
+          <div className="mt-8 lg:mt-10 flex flex-col md:flex-row flex-wrap gap-3 lg:gap-4">
             {expertiseItems.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -59,7 +59,7 @@ const Expertise = () => {
                 >
                   <Badge
                     variant="default"
-                    className="rounded-full py-3 px-5 lg:py-3.5 lg:px-6 border-border hover:bg-accent/80 hover:scale-105 transition-all duration-300 text-sm text-foreground dark:text-background lg:text-base inline-flex items-center gap-2"
+                    className="rounded-full py-3 px-5 lg:py-3.5 lg:px-6 border-border hover:bg-accent/80 hover:scale-105 transition-all duration-300 text-sm text-black lg:text-base inline-flex items-center gap-2"
                   >
                     <Icon className="w-4 h-4 lg:w-5 lg:h-5" />
                     {item.label}
