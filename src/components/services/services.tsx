@@ -125,11 +125,11 @@ const Services = () => {
               }}
               className="group relative overflow-hidden"
             >
-              {/* Card Background with Better Gradient */}
+              {/* Card Background with Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl" />
               
               {/* Main Card */}
-              <div className="relative flex flex-col border border-border/50 hover:border-primary/20 rounded-xl p-6 lg:p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/5">
+              <div className="relative flex flex-col border border-primary/30 hover:border-primary/20 rounded-xl p-6 lg:p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/5">
                 
                 {/* Animated SVG Icon */}
                 <motion.div 
@@ -196,7 +196,7 @@ const Services = () => {
                       />
                     ))}
                     
-                    {/* Optional: Add animated fill for certain icons */}
+                    {/*Add animated fill for icons */}
                     {feature.svgPaths.map((path, pathIndex) => (
                       <motion.path
                         key={`fill-${pathIndex}`}
@@ -223,7 +223,7 @@ const Services = () => {
                     {feature.title}
                   </motion.h3>
                   
-                  <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                  <p className="text-foreground/80 text-sm lg:text-base leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

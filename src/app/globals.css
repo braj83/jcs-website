@@ -51,7 +51,7 @@
   --foreground: oklch(0.13 0.04 264.7); /* deep dark gray */
 
   /* Surfaces */
-  --card: #ffffff; /* cards stand out as white panels */
+  --card: #f9f9f9; /* cards stand out as white panels */
   --card-foreground: var(--foreground);
   --popover: var(--card);
   --popover-foreground: var(--foreground);
