@@ -1,18 +1,30 @@
-'use client';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
+/**
+ * Hook to detect media query matches (e.g. screen size, dark mode, reduced motion)
+ */
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
+  const getMatches = (q: string): boolean => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia(q).matches;
+    }
+    return false;
+  };
+
+  const [matches, setMatches] = useState<boolean>(getMatches(query));
 
   useEffect(() => {
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    const listener = () => setMatches(media.matches);
-    window.addEventListener('resize', listener);
-    return () => window.removeEventListener('resize', listener);
-  }, [matches, query]);
+    const mediaQueryList = window.matchMedia(query);
+
+    const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
+
+    // Initial check
+    setMatches(mediaQueryList.matches);
+
+    // Listener
+    mediaQueryList.addEventListener('change', handler);
+    return () => mediaQueryList.removeEventListener('change', handler);
+  }, [query]);
 
   return matches;
 }

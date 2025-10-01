@@ -30,31 +30,32 @@ export const NavigationSheet = () => {
           className="rounded-full"
           aria-label="Open navigation menu"
         >
-          <Menu />
+          <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="px-6 py-3 flex flex-col">
+      <SheetContent className="px-6 py-6 flex flex-col">
         <SheetHeader>
-          <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+          <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         </SheetHeader>
-        <Logo />
+        
+        <div className="mb-8">
+          <Logo />
+        </div>
 
         <NavMenu
           orientation="vertical"
-          className="mt-6 mb-12 [&>div]:h-full"
+          className="flex-1 [&>div]:h-auto"
           onLinkClick={handleLinkClick}
         />
 
-        <div className="mt-auto mb-4 w-full">
-          <Button
-            size="lg"
-            className="w-full rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-            asChild
-            onClick={handleLinkClick}
-          >
-            <Link href="#contact">Let&apos;s Talk</Link>
-          </Button>
-        </div>
+        <Button
+          size="lg"
+          className="w-full rounded-md bg-primary text-black/90 hover:bg-primary/90 transition-colors mt-4"
+          asChild
+          onClick={handleLinkClick}
+        >
+          <Link href="https://cal.com/marko-jcs/30min" target="_blank" rel="noopener noreferrer">Let&apos;s Talk</Link>
+        </Button>
       </SheetContent>
     </Sheet>
   );

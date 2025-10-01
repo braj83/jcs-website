@@ -23,8 +23,8 @@ const Footer = () => {
           <div className="w-full sm:max-w-xs">
             <h6 className="font-medium">Stay up to date</h6>
             <form className="mt-6 flex items-center gap-2">
-              <Input type="email" placeholder="Enter your email" />
-              <Button className="text-black">
+              <Input type="email" placeholder="Enter your email" className="placeholder:text-foreground/80"/>
+              <Button className="text-black/90">
                 Subscribe
               </Button>
             </form>
@@ -36,9 +36,7 @@ const Footer = () => {
           <span className="text-foreground">
             All rights reserved
             {" © "}
-            <Link href="/" target="_blank">
-              JCS Software DOO Belgrade
-            </Link>
+            JCS Software DOO Belgrade
           </span>
 
           <div className="flex items-center gap-5 text-foreground">

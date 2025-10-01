@@ -15,13 +15,13 @@ type NavMenuProps = ComponentProps<typeof NavigationMenu> & {
 
 export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
   <NavigationMenu {...props}>
-    <NavigationMenuList className="gap-1 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start data-[orientation=vertical]:gap-2">
+    <NavigationMenuList className="gap-1 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start data-[orientation=vertical]:gap-3">
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <Link 
             href="#home" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             Home
           </Link>
@@ -32,7 +32,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#about" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             About
           </Link>
@@ -43,7 +43,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#process" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             How We Work
           </Link>
@@ -54,7 +54,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#contact" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             Contact
           </Link>

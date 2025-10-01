@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -48,9 +49,15 @@ const Hero = () => {
         </motion.p>
       </motion.div>
 
-      {/* Animated Image */}
+      {/* Animated Image with Link */}
+      <Link
+        href="https://cal.com/marko-jcs/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full md:col-span-1 order-2 md:order-2 cursor-pointer"
+      >
       <motion.div 
-        className="w-full md:col-span-1 flex justify-end order-2 md:order-2"
+        className="flex justify-end"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -95,6 +102,7 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
+      </Link>
     </div>
   );
 };
