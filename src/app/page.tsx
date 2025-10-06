@@ -9,6 +9,7 @@ import Footer from "@/components/footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
 import Expertise from "@/components/expertise/expertise";
 import { BackgroundPaths as AnimatedBackground } from "@/components/ui/animated-background";
+import Partners from "@/components/partners/partners";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
           <Timeline />
         </div>
       </section>
+
+      <Partners />
 
       {/* Contact Section - Dark Background */}
       <section id="contact" className="w-full px-4 sm:px-6 py-12 lg:py-20">
