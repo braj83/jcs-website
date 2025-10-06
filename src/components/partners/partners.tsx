@@ -76,16 +76,16 @@ const Partners = () => (
           >
             <div className="flex items-center gap-4">
               <Avatar className="h-12 w-12">
-                <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
+                <AvatarFallback className="sm:text-lg lg:text-xl font-semibold bg-primary text-primary-foreground">
                   {partner.name.charAt(0)}
                 </AvatarFallback>
               </Avatar>
               <div>
                 <p className="text-base font-semibold">{partner.name}</p>
-                <p className="text-sm text-muted-foreground">{partner.designation}</p>
+                <p className="sm:text-xl lg:text-2xl text-muted-foreground">{partner.designation}</p>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 sm:text-lg lg:text-xl leading-relaxed text-muted-foreground">
               {partner.testimonial}
             </p>
           </div>
