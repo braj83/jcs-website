@@ -3,6 +3,18 @@
 
 @tailwind utilities;
 
+/* Add these at the top level of your CSS */
+* {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+
+.motion-safe {
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-font-smoothing: antialiased;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
