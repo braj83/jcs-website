@@ -56,38 +56,48 @@ const partners = [
 const Partners = () => (
   <section className="w-full py-12 lg:py-20 overflow-hidden">
     <div className="max-w-[80rem] mx-auto px-4 sm:px-6">
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center tracking-tight">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center tracking-tight px-4">
         Partners in Success
       </h2>
-      <p className="mt-4 lg:mt-6 text-center text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-        We believe in the power of working together. Here are some of the great companies we`&apos;`re proud to call our partners.
+      <p className="mt-4 lg:mt-6 text-center text-foreground/80 text-base sm:text-lg lg:text-xl max-w-xl mx-auto px-4">
+        We believe in the power of working together. Here are some of the great
+        companies we&apos;re proud to call our partners.
       </p>
     </div>
-    
+
     <div className="mt-12 lg:mt-16 relative">
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10" />
-      
+
       <Marquee pauseOnHover className="[--duration:30s] py-4">
         {partners.map((partner) => (
           <div
             key={partner.id}
-            className="mx-4 w-[400px] bg-card border border-border rounded-xl p-6 shadow-sm"
+            className="group relative mx-4 w-[400px] overflow-hidden flex"
           >
-            <div className="flex items-center gap-4">
-              <Avatar className="h-12 w-12">
-                <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
-                  {partner.name.charAt(0)}
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <p className="text-xl font-semibold">{partner.name}</p>
-                <p className="text-base text-muted-foreground">{partner.designation}</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl" />
+
+            <div className="relative flex flex-col border border-primary/30 hover:border-primary/20 rounded-xl p-6 lg:p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/5">
+              <div className="flex items-center gap-4">
+                <Avatar className="h-12 w-12">
+                  <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
+                    {partner.name.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="text-xl font-semibold text-foreground">{partner.name}</p>
+                  <p className="text-base text-foreground/80">
+                    {partner.designation}
+                  </p>
+                </div>
               </div>
+              <p className="mt-4 text-base leading-relaxed text-foreground/80">
+                &ldquo;{partner.testimonial}&rdquo;
+              </p>
             </div>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {partner.testimonial}
-            </p>
+            
+            <div className="absolute -top-1 -right-1 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute -bottom-1 -left-1 w-16 h-16 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           </div>
         ))}
       </Marquee>
