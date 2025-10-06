@@ -60,7 +60,7 @@ const Partners = () => (
         Partners in Success
       </h2>
       <p className="mt-4 lg:mt-6 text-center text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-        We believe in the power of working together. Here are some of the great companies we're proud to call our partners.
+        We believe in the power of working together. Here are some of the great companies we are proud to call our partners.
       </p>
     </div>
     
