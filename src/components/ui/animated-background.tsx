@@ -1,32 +1,36 @@
 'use client';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
-//hardcoded color here
 const NEON_LIME = 'oklch(0.7 0 0)';
 
-function FloatingPaths({
-  position,
-  isMobile,
-}: {
+interface FloatingPathsProps {
   position: number;
   isMobile: boolean;
-}) {
-  const pathCount = isMobile ? 16 : 32;
-  const baseStrokeWidth = isMobile ? 0.35 : 0.22;
+}
 
+const FloatingPaths = React.memo(function FloatingPaths({
+  position,
+  isMobile,
+}: FloatingPathsProps) {
+  const pathCount = isMobile ? 16 : 32;
+  const baseStrokeWidth = 0.35;
   const gradientId = `bgStroke-${position}`;
 
-  const paths = Array.from({ length: pathCount }, (_, i) => ({
-    id: i,
-    d: `M-${380 - i * 5 * position} -${189 + i * 6}
-        C-${380 - i * 5 * position} -${189 + i * 6} 
-         -${312 - i * 5 * position} ${216 - i * 6} 
-          ${152 - i * 5 * position} ${343 - i * 6}
-        C${616 - i * 5 * position} ${470 - i * 6} 
-          ${684 - i * 5 * position} ${875 - i * 6} 
-          ${684 - i * 5 * position} ${875 - i * 6}`,
-  }));
+  const paths = useMemo(() => {
+    return Array.from({ length: pathCount }, (_, i) => ({
+      id: i,
+      d: `M-${380 - i * 5 * position} -${189 + i * 6}
+          C-${380 - i * 5 * position} -${189 + i * 6}
+           -${312 - i * 5 * position} ${216 - i * 6}
+            ${152 - i * 5 * position} ${343 - i * 6}
+          C${616 - i * 5 * position} ${470 - i * 6}
+            ${684 - i * 5 * position} ${875 - i * 6}
+            ${684 - i * 5 * position} ${875 - i * 6}`,
+      duration: 16 + Math.random() * 6,
+    }));
+  }, [pathCount, position]);
 
   return (
     <div className="absolute inset-0 pointer-events-none">
@@ -57,7 +61,7 @@ function FloatingPaths({
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 16 + Math.random() * 6,
+              duration: path.duration,
               repeat: Infinity,
               ease: 'linear',
             }}
@@ -66,15 +70,18 @@ function FloatingPaths({
       </svg>
     </div>
   );
-}
+});
 
 export function BackgroundPaths() {
+  const [hasMounted, setHasMounted] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const prefersReducedMotion = useMediaQuery(
-    '(prefers-reduced-motion: reduce)'
-  );
+  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
-  if (prefersReducedMotion) return null;
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted || prefersReducedMotion) return null;
 
   return (
     <div className="fixed inset-0 -z-10">

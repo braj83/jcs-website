@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export const Logo = () => (
   <svg
     width="150"
@@ -5,27 +9,13 @@ export const Logo = () => (
     viewBox="0 0 173 26"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
   >
     <defs>
-      {/* 1. Define the pulsating animation */}
-      <style>
-        {`
-          @keyframes pulsate {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
-          }
-          #pulsating-line {
-            animation: pulsate 1.5s infinite;
-          }
-        `}
-      </style>
       <clipPath id="clip0_201_20">
-        <rect width="173" height="26" fill="white"></rect>
+        <rect width="173" height="26" fill="white" />
       </clipPath>
     </defs>
     <g clipPath="url(#clip0_201_20)">
-      {/* These paths will inherit the text color */}
       <path
         d="M87.1182 20.9352C87.2283 21.2556 87.4274 21.554 87.6708 21.8064C88.09 22.2409 88.7549 22.6534 89.8834 22.6534C91.6534 22.6534 92.206 21.9666 92.206 21.2775C92.206 20.2922 90.436 20.0618 88.6681 19.6492C86.9002 19.2367 85.1301 18.3655 85.1301 16.1183C85.1301 14.4001 86.7879 12.6796 89.5531 12.6796C91.7656 12.6796 93.0021 13.5969 93.688 14.5142C94.0861 15.0409 94.374 15.6597 94.5286 16.3488H92.0959C91.9858 16.0744 91.8312 15.8221 91.6089 15.6158C91.232 15.2493 90.5926 14.8587 89.5531 14.8587C88.1366 14.8587 87.5629 15.4776 87.5629 16.1425C87.5629 17.1278 89.3329 17.3341 91.1008 17.7466C92.8708 18.1592 94.6387 19.0304 94.6387 21.2775C94.6387 23.1121 92.9809 24.8304 89.8834 24.8304C87.5396 24.8304 86.2565 23.867 85.4816 22.8817C85.0391 22.3089 84.73 21.6659 84.5754 20.933H87.1182V20.9352Z"
         fill="currentColor"
@@ -67,13 +57,19 @@ export const Logo = () => (
         fill="currentColor"
       />
 
-      {/* 2. Give the green line an ID to target it with the animation */}
-      <path
-        id="pulsating-line"
+      {/* Animated line with Motion */}
+      <motion.path
         d="M80.9444 20.0245H65.5647V24.5341H80.9444V20.0245Z"
         fill="#D3FF50"
+        animate={{
+          opacity: [1, 0.2, 1],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       />
     </g>
   </svg>
 );
-
