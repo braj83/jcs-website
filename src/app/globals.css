@@ -193,3 +193,25 @@ html {
 .group:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Global motion stability patch for Safari (esp. Intel Macs) */
+.motion-smooth,
+motion-section,
+motion-div {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+/* --- Framer Motion Safari smoothing patch --- */
+[data-motion] {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}

@@ -8,13 +8,16 @@ const NEON_LIME = 'oklch(0.7 0 0)';
 interface FloatingPathsProps {
   position: number;
   isMobile: boolean;
+  isSafari: boolean;
 }
 
 const FloatingPaths = React.memo(function FloatingPaths({
   position,
   isMobile,
+  isSafari,
 }: FloatingPathsProps) {
-  const pathCount = isMobile ? 16 : 32;
+  // Fewer paths on Safari (Intel) for smoother performance
+  const pathCount = isSafari ? (isMobile ? 8 : 16) : (isMobile ? 16 : 32);
   const baseStrokeWidth = 0.35;
   const gradientId = `bgStroke-${position}`;
 
@@ -33,12 +36,32 @@ const FloatingPaths = React.memo(function FloatingPaths({
   }, [pathCount, position]);
 
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        overflow: 'hidden',
+        contain: 'strict',
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+        WebkitTransform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        transformStyle: 'preserve-3d',
+      }}
+    >
       <svg
         className="w-full h-full"
         viewBox="0 0 696 316"
         fill="none"
         aria-hidden="true"
+        style={{
+          transform: 'translateZ(0)',
+          WebkitTransform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          WebkitBackfaceVisibility: 'hidden',
+          transformStyle: 'preserve-3d',
+          willChange: 'transform',
+        }}
       >
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
@@ -57,11 +80,11 @@ const FloatingPaths = React.memo(function FloatingPaths({
             initial={{ pathLength: 0.3, opacity: 0.8 }}
             animate={{
               pathLength: 1,
-              opacity: [0.5, 0.9, 0.5],
               pathOffset: [0, 1, 0],
+              opacity: isSafari ? 0.6 : [0.5, 0.9, 0.5],
             }}
             transition={{
-              duration: path.duration,
+              duration: path.duration * (isSafari ? 1.3 : 1),
               repeat: Infinity,
               ease: 'linear',
             }}
@@ -77,16 +100,21 @@ export function BackgroundPaths() {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
+  // Detect Safari (any version)
+  const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     setHasMounted(true);
+    if (typeof navigator !== 'undefined') {
+      setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    }
   }, []);
 
   if (!hasMounted || prefersReducedMotion) return null;
 
   return (
     <div className="fixed inset-0 -z-10">
-      <FloatingPaths position={1} isMobile={isMobile} />
-      <FloatingPaths position={-1} isMobile={isMobile} />
+      <FloatingPaths position={1} isMobile={isMobile} isSafari={isSafari} />
+      <FloatingPaths position={-1} isMobile={isMobile} isSafari={isSafari} />
     </div>
   );
 }
