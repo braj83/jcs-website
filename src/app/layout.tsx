@@ -12,9 +12,47 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "JCS Software",
-  description: "Just playing around with code",
-};
+ metadataBase: new URL('https://jcs-software.com'),
+ title: {
+  default: 'JCS | Software Development & Digital Solutions',
+  template: '%s | JCS'
+ },
+ description: 'JCS delivers custom software development, digital transformation, and innovative IT solutions. Expert team in web development, mobile apps, and enterprise software.',
+ keywords: ['software development', 'digital solutions', 'web development', 'mobile apps', 'IT consulting', 'Serbia', 'enterprise software'],
+ authors: [{ name: 'JCS' }],
+ creator: 'JCS',
+ publisher: 'JCS',
+ formatDetection: {
+  email: false,
+  address: false,
+  telephone: false,
+ },
+ openGraph: {
+  type: 'website',
+  locale: 'en_US',
+  url: 'https://jcs-software.com',
+  title: 'JCS | Software Development & Digital Solutions',
+  description: 'Custom software development and digital transformation solutions for modern businesses.',
+  siteName: 'JCS',
+  images: [{
+   url: '/work-img-1.png',
+   width: 1073,
+   height: 1025,
+   alt: 'JCS Software Development'
+  }],
+ },
+ robots: {
+  index: true,
+  follow: true,
+  googleBot: {
+   index: true,
+   follow: true,
+   'max-video-preview': -1,
+   'max-image-preview': 'large',
+   'max-snippet': -1,
+  },
+ },
+}
 
 export default function RootLayout({
   children,
@@ -22,13 +60,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Add suppressHydrationWarning for next-themes
     <html lang="en" suppressHydrationWarning>
       <body className={cn("font-sans antialiased", poppins.variable)}>
         {/* Wrap your children with the ThemeProvider */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark" // Set dark as the default theme
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
