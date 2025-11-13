@@ -12,7 +12,7 @@ const LetsTalk = () => {
         
         {/* Content */}
         <motion.div 
-          className="lg:col-span-3 py-12 lg:py-16"
+          className="lg:col-span-6 py-12 lg:py-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -96,26 +96,6 @@ const LetsTalk = () => {
             </motion.div>
           </motion.div>
           </Link>
-        </motion.div>
-        
-        {/* Image */}
-        <motion.div 
-          className="lg:col-span-2 flex items-end"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <div className="relative w-full aspect-[1320/1750]">
-            <Image
-              src="/mj.png"
-              alt="Marko Jevtović, Founder of JCS Software"
-              fill
-              className="object-contain object-bottom"
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-          </div>
         </motion.div>
       </div>
     </section>

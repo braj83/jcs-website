@@ -9,13 +9,6 @@ import { useEffect, useState } from "react";
 // The array was not closed properly and was mixed with the component definition
 const partnerLogos = [
   {
-    name: "Cattaro",
-    light: "/partners/cattaro-light.png",
-    dark: "/partners/cattaro-dark.png",
-    width: 252,
-    height: 80,
-  },
-  {
     name: "ProfiLab",
     light: "/partners/profilab-light.png",
     dark: "/partners/profilab-dark.png",
@@ -102,7 +95,7 @@ const Partners = () => {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10" />
 
-        <Marquee pauseOnHover className="[--duration:30s] [--gap:4rem]">
+        <Marquee pauseOnHover className="[--duration:30s] [--gap:6rem]">
           {logosForMarquee.map((logo, index) => (
             <div key={`${logo.name}-${index}`} className="flex-shrink-0">
               <Image
