@@ -36,8 +36,8 @@ export function ThemeToggleButton() {
       className="rounded-full hover:bg-accent hover:border-primary/20 transition-colors relative"
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      <Sun className={`h-[1.2rem] w-[1.2rem] absolute transition-all duration-300 ${isDark ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'}`} />
-      <Moon className={`h-[1.2rem] w-[1.2rem] absolute transition-all duration-300 ${isDark ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'}`} />
+      <Moon className={`h-[1.2rem] w-[1.2rem] absolute transition-all duration-300 ${isDark ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'}`} />
+      <Sun className={`h-[1.2rem] w-[1.2rem] absolute transition-all duration-300 ${isDark ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'}`} />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
