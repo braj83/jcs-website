@@ -54,11 +54,11 @@ html, body {
   --radius: 0.625rem;
 
   /* Light background (soft gray) */
-  --background: #e1e1e1; /* soft neutral */
+  --background: oklch(0.9097 0 0); /* soft neutral */
   --foreground: oklch(0.13 0.04 264.7); /* deep dark gray */
 
   /* Surfaces */
-  --card: #f0f0f0; /* cards stand out as white panels */
+  --card: oklch(0.9551 0 0); /* cards stand out as white panels */
   --card-foreground: var(--foreground);
   --popover: var(--card);
   --popover-foreground: var(--foreground);
@@ -110,7 +110,7 @@ html, body {
 .dark {
   /* Dark background */
   --background: oklch(0.07 0.02 265); /* near black */
-  --foreground: #e1e1e1; /* soft neutral */
+  --foreground: oklch(0.9097 0 0); /* soft neutral */
 
   /* Surfaces */
   --card: oklch(0.1 0.02 265);
@@ -169,29 +169,6 @@ html {
 .content-wrapper {
   min-height: 100vh;
   contain: content;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - var(--gap, 1rem)));
-  }
-}
-
-.animate-marquee {
-  animation: marquee var(--duration, 40s) linear infinite;
-  
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-  white-space: normal;
-}
-
-.group:hover .animate-marquee {
-  animation-play-state: paused;
 }
 
 /* Global motion stability patch for Safari (esp. Intel Macs) */
