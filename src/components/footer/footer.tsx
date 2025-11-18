@@ -9,7 +9,7 @@ const Footer = () => {
             <Logo />
           </div>
 
-          <div className="w-full sm:max-w-lg text-right">
+          <div className="w-full sm:max-w-lg text-center sm:text-right">
             {/* Copyright */}
             <span className="text-foreground">
               All rights reserved

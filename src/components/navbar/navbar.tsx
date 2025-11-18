@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 import { ThemeToggleButton } from "../theme-toggle-button";
-import Link from "next/link";
+import CalTrigger  from "@/components/ui/cal_trigger";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [hidden, setHidden] = useState(false);
@@ -34,21 +34,20 @@ export const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className="h-full flex items-center justify-between px-4">
-        <Logo />
+        <Link href="/" className="flex items-center">
+          <Logo />
+        </Link>
 
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
 
         <div className="flex items-center gap-3">
           <ThemeToggleButton />
-          <Button 
-            className="rounded-md hidden md:inline-flex bg-primary text-background hover:bg-primary/90 transition-colors"
-            asChild
-          >
-            <Link href="https://cal.com/marko-jcs/30min" target="_blank" rel="noopener noreferrer">
+          <CalTrigger>
+            <div className="rounded-md hidden md:inline-flex bg-primary text-black text-sm hover:bg-primary/90 transition-colors h-10 px-4 py-2 items-center justify-center font-medium cursor-pointer">
               Let&apos;s Talk
-            </Link>
-          </Button>
+            </div>
+          </CalTrigger>
 
           {/* Mobile Menu */}
           <div className="md:hidden">

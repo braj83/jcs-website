@@ -19,11 +19,11 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <Link 
-            href="#home" 
+            href="#services" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-xl md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-black focus:bg-accent focus:text-black focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
-            Home
+            Services
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
@@ -32,7 +32,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#about" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-xl md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-black focus:bg-accent focus:text-black focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             About
           </Link>
@@ -43,7 +43,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#process" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-xl md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-black focus:bg-accent focus:text-black focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             How We Work
           </Link>
@@ -54,7 +54,7 @@ export const NavMenu = ({ onLinkClick, ...props }: NavMenuProps) => (
           <Link 
             href="#contact" 
             onClick={onLinkClick}
-            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-xl md:text-sm data-[orientation=vertical]:text-lg font-medium transition-colors hover:bg-accent hover:text-black focus:bg-accent focus:text-black focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             Contact
           </Link>

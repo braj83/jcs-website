@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
+import CalTrigger  from "@/components/ui/cal_trigger";
 import Link from "next/link";
 
 export const NavigationSheet = () => {
@@ -27,19 +27,31 @@ export const NavigationSheet = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="rounded-full"
+          className="rounded-md cursor-pointer"
           aria-label="Open navigation menu"
         >
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
       <SheetContent className="px-6 py-6 flex flex-col">
-        <SheetHeader>
-          <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-        </SheetHeader>
-        
-        <div className="mb-8">
-          <Logo />
+        {/* Add hidden title for accessibility */}
+        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+
+        {/* Custom header with logo and close button */}
+        <div className="flex items-center justify-between mb-8">
+          <Link href="/" onClick={() => setOpen(false)}>
+            <Logo />
+          </Link>
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setOpen(false)}
+            className="h-8 w-8"
+            aria-label="Close menu"
+          >
+            <X className="h-5 w-5" />
+          </Button>
         </div>
 
         <NavMenu
@@ -48,16 +60,14 @@ export const NavigationSheet = () => {
           onLinkClick={handleLinkClick}
         />
 
-        <Button
-          size="lg"
-          className="w-full rounded-md bg-primary text-background hover:bg-primary/90 transition-colors mt-4"
-          asChild
-          onClick={handleLinkClick}
-        >
-          <Link href="https://cal.com/marko-jcs/30min" target="_blank" rel="noopener noreferrer">
+        <CalTrigger>
+          <div 
+            className="rounded-md inline-flex bg-primary text-black text-lg hover:bg-primary/90 transition-colors h-10 px-4 py-2 items-center justify-center font-medium cursor-pointer w-full"
+            onClick={() => setOpen(false)}
+          >
             Let&apos;s Talk
-          </Link>
-        </Button>
+          </div>
+        </CalTrigger>
       </SheetContent>
     </Sheet>
   );

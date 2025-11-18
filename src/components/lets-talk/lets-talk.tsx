@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import CalTrigger  from "@/components/ui/cal_trigger";
 
 const LetsTalk = () => {
   return (
@@ -43,59 +43,56 @@ const LetsTalk = () => {
           </div>
 
           {/* Animated Image with Link */}
-          <Link
-            href="https://cal.com/marko-jcs/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full md:col-span-1 order-2 md:order-2 cursor-pointer"
-          >
-          <motion.div 
-            className="flex md:justify-end sm:justify-start mt-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <motion.div 
-              className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 relative"
-              animate={{ rotate: 360 }}
-              transition={{ 
-                duration: 7,
-                repeat: Infinity,
-                ease: "linear",
-                repeatType: "loop"
-              }}
-              whileHover={{ 
-                transition: { 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  repeatType: "loop"
-                }
-              }}
-            >
-              <Image
-                src="/getintouch.svg"
-                alt="Get in Touch"
-                width={160}
-                height={160}
-                className="w-full h-full"
-                priority
-                loading="eager"
-              />
-
-              {/* Glowing Background Effect */}
-              <motion.div
-                className="absolute inset-0 bg-primary/10 rounded-full blur-md -z-10"
+          <div className="w-full md:col-span-1 order-2 md:order-2">
+            <CalTrigger> 
+              <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
-                whileHover={{ 
-                  opacity: 1, 
-                  scale: 1.1,
-                  transition: { duration: 0.3 }
-                }}
-              />
-            </motion.div>
-          </motion.div>
-          </Link>
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                <motion.div
+                  style={{ pointerEvents: 'none' }} 
+                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 relative"
+                  animate={{ rotate: 360 }}
+                  transition={{ 
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatType: "loop"
+                  }}
+                  whileHover={{ 
+                    transition: { 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatType: "loop"
+                    }
+                  }}
+                >
+                  <Image
+                    src="/getintouch.svg"
+                    alt="Get in Touch"
+                    width={160}
+                    height={160}
+                    className="w-full h-full"
+                    style={{ pointerEvents: 'auto' }}
+                    priority
+                    loading="eager"
+                  />
+    
+                  <motion.div
+                    className="absolute inset-0 bg-primary/10 rounded-full blur-md -z-10"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ 
+                      opacity: 1, 
+                      scale: 1.1,
+                      transition: { duration: 0.3 }
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
+            </CalTrigger>
+          </div>
         </motion.div>
       </div>
     </section>

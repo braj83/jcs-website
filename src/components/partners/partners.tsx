@@ -1,12 +1,11 @@
 "use client";
 
 import { Marquee } from "@/components/ui/marquee";
-import { motion } from "framer-motion"; // Corrected import
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-// The array was not closed properly and was mixed with the component definition
 const partnerLogos = [
   {
     name: "ProfiLab",
@@ -103,7 +102,8 @@ const Partners = () => {
                 alt={`${logo.name} logo`}
                 width={logo.width}
                 height={logo.height}
-                className="object-contain h-20 w-auto"
+                className="h-20 object-contain"
+                style={{ width: 'auto' }}
               />
             </div>
           ))}

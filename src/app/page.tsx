@@ -9,21 +9,29 @@ import Footer from "@/components/footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
 import Expertise from "@/components/expertise/expertise";
 import Partners from "@/components/partners/partners";
+import { BackgroundWrapper } from "@/components/ui/background-wrapper";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center relative">
       <Navbar />
 
-      {/* Home Section */}
-      <section id="home" className="w-full flex flex-col items-center pt-24 pb-12 lg:pb-20">
-        <Hero />
-        <Services />
-      </section> 
+      {/* Hero & Services - With Background */}
+      <BackgroundWrapper className="w-full">
+        {/* Hero Section */}
+        <section className="w-full flex flex-col items-center">
+          <Hero />
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="w-full flex flex-col items-center py-12 lg:py-20">
+          <Services />
+        </section>
+      </BackgroundWrapper>
 
       {/* About Section - Dark Background */}
-      <section id="about" className="w-full px-4 sm:px-6 py-12 lg:py-20">
-        <div className="bg-foreground text-background rounded-3xl py-12 lg:py-16">
+      <section id="about" className="w-full ">
+        <div className="bg-foreground text-background rounded-3xl px-4 sm:px-6 py-12 lg:py-20">
           <div className="max-w-[80rem] mx-auto">
             <AboutUs />
             <hr className="my-12 lg:my-16 border-background/20" />
@@ -42,11 +50,14 @@ export default function Home() {
         </div>
       </section>
 
-      <Partners />
+      {/* Partners Div */}
+      <div className="w-full pb-12 lg:pb-20 px-4 sm:px-6">
+        <Partners  />
+      </div>
 
       {/* Contact Section - Dark Background */}
-      <section id="contact" className="w-full px-4 sm:px-6 py-12 lg:py-20">
-        <div className="bg-foreground text-background rounded-3xl">
+      <section id="contact" className="w-full ">
+        <div className="bg-foreground text-background rounded-3xl px-4 sm:px-6 py-6 lg:py-10">
           <div className="max-w-[80rem] mx-auto">
             <LetsTalk />
           </div>
