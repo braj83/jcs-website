@@ -30,7 +30,7 @@ export default function Home() {
       </BackgroundWrapper>
 
       {/* About Section - Dark Background */}
-      <section id="about" className="w-full ">
+      <section id="about" className="w-full px-4 sm:px-6">
         <div className="bg-foreground text-background rounded-3xl px-4 sm:px-6 py-12 lg:py-20">
           <div className="max-w-[80rem] mx-auto">
             <AboutUs />
@@ -56,7 +56,7 @@ export default function Home() {
       </div>
 
       {/* Contact Section - Dark Background */}
-      <section id="contact" className="w-full ">
+      <section id="contact" className="w-full px-4 sm:px-6">
         <div className="bg-foreground text-background rounded-3xl px-4 sm:px-6 py-6 lg:py-10">
           <div className="max-w-[80rem] mx-auto">
             <LetsTalk />
