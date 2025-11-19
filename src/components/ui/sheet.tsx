@@ -71,6 +71,7 @@ function SheetContent({
         {...props}
       >
         {children}
+        <SheetDescription className="sr-only" />
       </SheetPrimitive.Content>
     </SheetPortal>
   )

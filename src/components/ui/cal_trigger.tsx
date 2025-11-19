@@ -29,7 +29,7 @@ export default function CalTrigger({ children, onOpen }: CalTriggerProps) {
       data-cal-namespace="30min"
       data-cal-link="marko-jcs/30min"
       data-cal-config='{"layout":"month_view","theme":"auto"}'
-      className="appearance-none bg-transparent border-none p-0 cursor-pointer w-full flex justify-end"
+      className="appearance-none bg-transparent border-none p-0 flex justify-end"
       aria-label="Open calendar booking"
     >
       {children}

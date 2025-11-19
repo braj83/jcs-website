@@ -16,15 +16,13 @@ export default function Home() {
     <main className="flex flex-col items-center relative">
       <Navbar />
 
-      {/* Hero & Services - With Background */}
+      {/* Hero & Services */}
       <BackgroundWrapper className="w-full">
-        {/* Hero Section */}
-        <section className="w-full flex flex-col items-center">
+        <section className="w-full"> 
           <Hero />
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="w-full flex flex-col items-center py-12 lg:py-20">
+        <section id="services" className="py-12 lg:py-20"> 
           <Services />
         </section>
       </BackgroundWrapper>
@@ -34,7 +32,7 @@ export default function Home() {
         <div className="bg-foreground text-background rounded-3xl px-4 sm:px-6 py-12 lg:py-20">
           <div className="max-w-[80rem] mx-auto">
             <AboutUs />
-            <hr className="my-12 lg:my-16 border-background/20" />
+            <hr className="my-12 lg:my-16 border-background/20" /> 
             <LetsWork />
             <hr className="my-12 lg:my-16 border-background/20" />
             <Expertise />
@@ -50,10 +48,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Div */}
-      <div className="w-full pb-12 lg:pb-20 px-4 sm:px-6">
-        <Partners  />
-      </div>
+      {/* Partners Section */}
+      <section className="w-full pb-12 lg:pb-20 px-4 sm:px-6">
+        <Partners />
+      </section>
 
       {/* Contact Section - Dark Background */}
       <section id="contact" className="w-full px-4 sm:px-6">

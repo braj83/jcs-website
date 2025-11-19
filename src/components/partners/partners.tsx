@@ -6,51 +6,53 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// --- PARTNER DATA ---
 const partnerLogos = [
   {
     name: "ProfiLab",
     light: "/partners/profilab-light.png",
     dark: "/partners/profilab-dark.png",
-    width: 174,
-    height: 80,
+    width: 1300,
+    height: 600,
   },
   {
     name: "Galerija",
     light: "/partners/galerija-light.png",
     dark: "/partners/galerija-dark.png",
-    width: 212,
-    height: 80,
-  },
-  {
-    name: "EagleHills",
-    light: "/partners/eaglehills-light.png",
-    dark: "/partners/eaglehills-dark.png",
-    width: 282,
-    height: 80,
+    width: 1594,
+    height: 600,
   },
   {
     name: "Portugal",
     light: "/partners/portugal-light.png",
     dark: "/partners/portugal-dark.png",
-    width: 174,
-    height: 80,
+    width: 1305,
+    height: 600,
   },
   {
     name: "Jtb",
     light: "/partners/jtb-light.png",
     dark: "/partners/jtb-dark.png",
-    width: 192,
-    height: 80,
+    width: 1301,
+    height: 600,
+  },
+  {
+    name: "EagleHills",
+    light: "/partners/eaglehills-light.png",
+    dark: "/partners/eaglehills-dark.png",
+    width: 1864,
+    height: 600,
   },
   {
     name: "Rasa",
     light: "/partners/rasa-light.png",
     dark: "/partners/rasa-dark.png",
-    width: 104,
-    height: 80,
+    width: 792,
+    height: 600,
   },
 ];
 
+// --- PARTNERS COMPONENT ---
 const Partners = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -67,6 +69,7 @@ const Partners = () => {
 
   return (
     <section className="w-full pb-12 lg:pb-20 overflow-hidden">
+      {/* Header Section */}
       <motion.div
         className="max-w-[80rem] mx-auto px-4 sm:px-6"
         initial={{ opacity: 0, y: 20 }}
@@ -90,20 +93,21 @@ const Partners = () => {
         </p>
       </motion.div>
 
+      {/* Marquee Section */}
       <div className="mt-12 lg:mt-16 lg:max-w-[80rem] justify-center mx-auto relative">
+        {/* Fade Overlays */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10" />
 
         <Marquee pauseOnHover className="[--duration:30s] [--gap:6rem]">
           {logosForMarquee.map((logo, index) => (
-            <div key={`${logo.name}-${index}`} className="flex-shrink-0">
+            <div key={`${logo.name}-${index}`} className="flex-shrink-0 flex items-center justify-center">
               <Image
                 src={theme === "dark" ? logo.dark : logo.light}
                 alt={`${logo.name} logo`}
                 width={logo.width}
                 height={logo.height}
-                className="h-20 object-contain"
-                style={{ width: 'auto' }}
+                className="h-20 object-contain w-auto" 
               />
             </div>
           ))}

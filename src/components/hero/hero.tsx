@@ -51,15 +51,15 @@ const Hero = () => {
       </motion.div>
 
       {/* Animated Image with Link */}
-      <div className="w-full md:col-span-1 order-2 md:order-2">
+      <div className="w-full md:col-span-1 order-2 md:order-2 flex justify-end mr-16 md:mr-0 md:mt-52">
         <CalTrigger> 
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="cursor-pointer"
           >
             <motion.div
-              style={{ pointerEvents: 'none' }} 
               className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 relative"
               animate={{ rotate: 360 }}
               transition={{ 
@@ -83,7 +83,6 @@ const Hero = () => {
                 width={160}
                 height={160}
                 className="w-full h-full"
-                style={{ pointerEvents: 'auto' }}
                 priority
                 loading="eager"
               />
